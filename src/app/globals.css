@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   GLOBAL BASE STYLES
+   These are the few rules that are easier to express in plain CSS than in
+   Tailwind utility classes. Everything else lives in the components.
+   ========================================================================== */
+
+@layer base {
+  /* -------------------------------------------------------------------------
+     FONTS
+     -------------------------------------------------------------------------
+     The mock-ups use a warm transitional serif for headings and body copy, and
+     a plain UI sans for small helper text.
+
+     Right now these point at high-quality system fonts, so the site needs no
+     network request to render text. To use a webfont instead (e.g. EB Garamond
+     or Noto Serif TC, which also covers Traditional Chinese), load it with
+     `next/font` in `src/app/layout.tsx` and set the variable to its
+     `.variable` class — nothing else has to change.
+     ------------------------------------------------------------------------- */
+  :root {
+    --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino,
+      "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+    --font-sans: system-ui, -apple-system, "Segoe UI", "Noto Sans TC",
+      "PingFang TC", "Microsoft JhengHei", Roboto, sans-serif;
+  }
+
+  html {
+    /* Smooth scrolling for the footer's "Return to the top" anchor link. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-cream text-ink font-serif antialiased;
+    /* Stops iOS Safari from auto-inflating text sizes in landscape. */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* ---------------------------------------------------------------------
+     WCAG 2.2 — 2.4.7 Focus Visible & 2.4.11 Focus Not Obscured
+     A single, unmistakable focus ring for EVERY interactive element.
+     `:focus-visible` means mouse users don't see it, keyboard users always do.
+     --------------------------------------------------------------------- */
+  :focus-visible {
+    outline: 3px solid #1a3a4e;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* On the dark green header/footer the navy ring would disappear,
+     so those areas opt into a light ring instead. */
+  .on-dark :focus-visible {
+    outline-color: #f6f1e4;
+  }
+
+  /* ---------------------------------------------------------------------
+     WCAG 2.2 — 2.3.3 Animation from Interactions
+     Anyone who has asked their OS to reduce motion gets a still page.
+     --------------------------------------------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Shared horizontal gutter so every section lines up with the header. */
+  .page-shell {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  /* Text that is available to screen readers but not shown on screen.
+     Used for things like "(required)" and live-region announcements. */
+  .sr-only-focusable:focus {
+    @apply not-sr-only fixed left-4 top-4 z-50 rounded bg-brand-navy px-4 py-2 text-white;
+  }
+}
