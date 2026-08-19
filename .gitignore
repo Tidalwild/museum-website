@@ -8,3 +8,11 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Generated preview page (docs/preview.html)
+# ------------------------------------------
+# A frozen HTML snapshot of every screen, produced by rendering the running app
+# and inlining its CSS and images. It is ~360 KB of machine-generated markup and
+# goes stale the moment the UI changes, so it is deliberately NOT committed —
+# regenerate it instead of trusting an old copy.
+docs/preview.html
