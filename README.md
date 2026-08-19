@@ -279,6 +279,18 @@ and by unplugging your mouse.
 
 ---
 
+## Handing this over
+
+If you are a student who built this and are passing it to someone else — or to
+the museum — read [`docs/HANDOFF.md`](docs/HANDOFF.md) first.
+
+The short version: **the finished site never runs on anyone's personal
+computer.** `npm run dev` is for development only; production runs on Vercel,
+Supabase and Resend. The thing that actually needs care during a handover is
+*account ownership* — those three services must be registered to a museum or
+University address rather than a personal one, because the database holds
+visitors' names, phone numbers and email addresses.
+
 ## Things left for the next developer
 
 * **Photographs.** `public/images/` holds generated placeholders — see the
