@@ -78,7 +78,68 @@ orphaning an account.
 
 ---
 
-## 3. The handover checklist
+## 3. Before the official accounts exist
+
+Departments move slowly, and you will often be told to "just use a placeholder
+account for now". That is reasonable advice, and this is how to follow it
+without creating a mess.
+
+### Make it a real mailbox, owned by the project
+
+Create one new free mailbox that exists only for this project — something like
+`syumuseum.project@gmail.com`. Then use that single address to sign up for
+Vercel, Supabase and Resend.
+
+This is better than using your own email, because the account belongs to the
+project rather than to you. It is the same role-account pattern described
+above, just not on a University domain yet.
+
+Three rules make it work:
+
+- **It must be a real inbox you can open.** Not a disposable or ten-minute
+  address. Every one of these services sends verification links and password
+  resets there; lose access to the mailbox and you lose the accounts, with the
+  database inside them.
+- **Do not set the recovery phone or backup email to your personal ones.** That
+  quietly makes it your account again. Use the supervisor's, or a second
+  project address.
+- **Write the credentials down where the department can reach them** — the
+  supervisor, a shared password manager, whatever they use. An account nobody
+  else can open is not a handover, however project-branded the address looks.
+
+### What "fake" must not mean
+
+Two versions of this genuinely cause problems:
+
+- **A disposable inbox.** See above — you will lose the accounts.
+- **An address that implies it is official when it is not.** Registering
+  something designed to look like a real University mailbox, or presenting a
+  placeholder account as the museum's official contact, misleads both the
+  services and anyone who writes to it. A neutral project name is fine; a
+  convincing impersonation of an institutional address is not.
+
+### Changing over later
+
+None of this is permanent. Vercel, Supabase and Resend all let you change the
+account email address, or invite the official account as an owner and remove
+the placeholder. Doing that later is a settings change, not a migration — which
+is exactly why using one placeholder account now is safe, and why scattering
+signups across personal addresses is not.
+
+### The address the site shows visitors
+
+Separately from the accounts: `contactEmail` in `src/config/site.ts` is printed
+in the confirmation email every visitor receives, and on the screen shown if
+that email fails to send. It currently holds a **guess** (`museum@hksyu.edu`),
+flagged with a comment in the file.
+
+A placeholder there is fine while nobody is really booking. Before the site
+takes real bookings it must be a mailbox someone reads — otherwise a visitor
+trying to cancel writes into the void. This is a one-line change.
+
+---
+
+## 4. The handover checklist
 
 Work down this list. Steps 1–3 matter even if the rest waits.
 
@@ -117,7 +178,7 @@ Leaving a former student as an admin on a live service is its own risk.
 
 ---
 
-## 4. Secrets: the rules that matter
+## 5. Secrets: the rules that matter
 
 The project is already set up so this is hard to get wrong, but know why:
 
@@ -136,7 +197,7 @@ The project is already set up so this is hard to get wrong, but know why:
 
 ---
 
-## 5. The visitor data itself
+## 6. The visitor data itself
 
 The `bookings` table holds personal data: first name, last name, phone number,
 email address, visit date, and a timestamp recording consent to the Terms and
@@ -166,7 +227,7 @@ questions, and they should be answered before the site goes live:
 
 ---
 
-## 6. For whoever picks this up
+## 7. For whoever picks this up
 
 Everything you need is in the repository.
 

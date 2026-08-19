@@ -25,6 +25,17 @@ export const SITE = {
     /** "View on Google Maps" link in the footer. */
     mapsUrl: "https://maps.google.com/?q=Hong+Kong+Shue+Yan+University",
   },
+  /**
+   * ⚠️ VERIFY THIS BEFORE THE SITE GOES LIVE.
+   *
+   * This address is a plausible guess, not a confirmed mailbox. It is printed
+   * in the confirmation email every visitor receives ("reply to this email or
+   * contact us at ...") and on the screen shown if the email fails to send.
+   *
+   * If nobody reads this inbox, a visitor trying to change or cancel a booking
+   * writes into the void. Replace it with a mailbox someone actually monitors
+   * — even a temporary project address is better than one that bounces.
+   */
   contactEmail: "museum@hksyu.edu",
 } as const;
 
