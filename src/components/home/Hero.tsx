@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { assetPath } from "@/lib/asset-path";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 
 /**
@@ -19,7 +20,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
     <div className="page-shell pt-4 sm:pt-6">
       <div className="relative aspect-[21/10] w-full overflow-hidden bg-brand-green">
         <Image
-          src="/images/hero-museum.jpg"
+          src={assetPath("/images/hero-museum.jpg")}
           alt={dict.home.heroImageAlt}
           fill
           priority

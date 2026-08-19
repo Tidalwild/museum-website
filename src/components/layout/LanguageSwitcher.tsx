@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 
+import { IS_STATIC_DEMO } from "@/config/demo";
 import { setLocale } from "@/lib/i18n/actions";
 import { LOCALE_SWITCHER, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
@@ -33,6 +34,11 @@ export function LanguageSwitcher({
   // `useTransition` keeps the page interactive while the server re-renders,
   // and gives us `isPending` so we can dim the control instead of freezing.
   const [isPending, startTransition] = useTransition();
+
+  /* The static preview has no server to remember a language choice, so the
+     switcher would be a button that silently does nothing. Hide it there; the
+     preview banner says the preview is English only. */
+  if (IS_STATIC_DEMO) return null;
 
   return (
     <div className="flex items-center gap-3" role="group" aria-label={dict.header.languageNavLabel}>

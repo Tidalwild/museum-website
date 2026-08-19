@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { BookingFlow } from "@/components/booking/BookingFlow";
 import { BookingNotice } from "@/components/layout/BookingNotice";
+import { DemoBanner } from "@/components/layout/DemoBanner";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -34,6 +35,7 @@ export default async function BookingPage() {
   return (
     <>
       <SkipLink label={dict.meta.skipToContent} />
+      <DemoBanner dict={dict} />
       <SiteHeader locale={locale} dict={dict} />
       <BookingNotice dict={dict} />
 

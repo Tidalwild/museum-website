@@ -45,6 +45,12 @@ export const en = {
     visit: "Visit",
   },
 
+  /** Banner shown across the top of the static preview build only. */
+  demoBanner: {
+    label: "Preview notice",
+    text: "Preview of the museum website. Bookings are not open yet, and this preview is English only.",
+  },
+
   /** The cream strip under the header on the home page. */
   announcement: {
     /** Names the <aside> landmark so it can be skipped or jumped to. */
@@ -309,6 +315,11 @@ export const en = {
         "Something went wrong and your booking was not saved. Please try again in a moment.",
       /** Shown when the browser blocks the request entirely. */
       network: "We could not reach the museum's booking service. Check your connection and try again.",
+      /**
+       * Static preview only. There is no server to receive the booking, so say
+       * so plainly rather than letting the visitor think they failed.
+       */
+      demo: "This is a preview of the website — bookings are not open yet. Everything else on this page works; the form simply has nowhere to send your details until the museum's booking system is switched on.",
     },
   },
 

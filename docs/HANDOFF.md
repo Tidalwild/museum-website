@@ -261,3 +261,33 @@ touch one of those two files and nothing else.
 Before changing the UI, read `docs/ACCESSIBILITY.md`. The site targets
 WCAG 2.2 Level AA and currently passes an automated audit with zero violations;
 it is much easier to keep that than to win it back.
+
+---
+
+## 8. The two ways this site can be hosted
+
+**Vercel (or any Node host) — the real deployment.** The full app: the booking
+form saves to Supabase and sends a confirmation email. This is what the museum
+should run.
+
+```bash
+npm run build && npm start
+```
+
+**GitHub Pages — a preview only.** `npm run build:demo` exports plain files to
+`out/`, which any file host can serve. Useful for sharing a link before the
+real hosting exists.
+
+The preview genuinely cannot take a booking. GitHub Pages serves files; it runs
+no code, so there is nothing to receive a submitted form, and the Supabase key
+that would save it must never be shipped to a browser anyway. The preview says
+so — a banner across the top, and a plain message on Submit — rather than
+failing in a way a visitor might blame themselves for. The language switcher is
+hidden there for the same reason: nothing can remember the choice.
+
+If someone asks "why not just host it on Pages like the other site?", the
+answer is that the other site is pure front-end. This one has a back end, and
+the back end is the point.
+
+See `scripts/build-static-demo.mjs` for how the export is produced, and
+`src/config/demo.ts` for the flag the components read.

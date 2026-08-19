@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { DemoBanner } from "./DemoBanner";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { SkipLink } from "./SkipLink";
@@ -28,6 +29,7 @@ export function PageShell({
   return (
     <>
       <SkipLink label={dict.meta.skipToContent} />
+      <DemoBanner dict={dict} />
       <SiteHeader locale={locale} dict={dict} currentPath={currentPath} />
       <main id="main-content" tabIndex={-1} className="min-h-[55vh] bg-surface-cream">
         {children}

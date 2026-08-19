@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check:validation": "tsx scripts/check-validation.ts",
-    "check": "npm run typecheck && npm run lint && npm run check:validation"
+    "check": "npm run typecheck && npm run lint && npm run check:validation",
+    "build:demo": "node scripts/build-static-demo.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",

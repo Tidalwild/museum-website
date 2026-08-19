@@ -1,4 +1,5 @@
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { DemoBanner } from "@/components/layout/DemoBanner";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -31,6 +32,7 @@ export default async function HomePage() {
   return (
     <>
       <SkipLink label={dict.meta.skipToContent} />
+      <DemoBanner dict={dict} />
       <SiteHeader locale={locale} dict={dict} currentPath="/" />
       <AnnouncementBar dict={dict} />
 

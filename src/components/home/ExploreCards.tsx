@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HOME_CARDS } from "@/config/site";
+import { assetPath } from "@/lib/asset-path";
 import type { Dictionary } from "@/lib/i18n/dictionaries/en";
 
 /**
@@ -37,7 +38,7 @@ export function ExploreCards({ dict }: { dict: Dictionary }) {
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-line-soft">
                   <Image
-                    src={card.image}
+                    src={assetPath(card.image)}
                     alt=""
                     fill
                     sizes="(max-width: 640px) 100vw, 360px"

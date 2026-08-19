@@ -3,6 +3,7 @@ import { cookies, headers } from "next/headers";
 
 import { en, type Dictionary } from "./dictionaries/en";
 import { zhHant } from "./dictionaries/zh-Hant";
+import { IS_STATIC_DEMO } from "@/config/demo";
 import { DEFAULT_LOCALE, LOCALE_COOKIE, parseLocale, type Locale } from "./config";
 
 export type { Locale } from "./config";
@@ -52,6 +53,11 @@ const DICTIONARIES: Record<Locale, Dictionary> = {
  *   3. English.
  */
 export async function getLocale(): Promise<Locale> {
+  /* The static preview is exported at build time — there is no request, so no
+     cookie and no Accept-Language header to read. Reading them would also make
+     every page dynamic, which a static export forbids outright. */
+  if (IS_STATIC_DEMO) return DEFAULT_LOCALE;
+
   const cookieStore = await cookies();
   const fromCookie = parseLocale(cookieStore.get(LOCALE_COOKIE)?.value);
   if (fromCookie) return fromCookie;

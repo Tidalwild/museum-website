@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useRef, useState } from "react";
 
 import { createBooking } from "@/lib/booking/actions";
+import { IS_STATIC_DEMO } from "@/config/demo";
 import { errorSummaryItems, resolveErrorMessage } from "@/lib/booking/messages";
 import {
   EMPTY_BOOKING_FORM,
@@ -141,6 +142,15 @@ export function BookingFlow({ dict, locale }: { dict: Dictionary; locale: Locale
     if (!local.success) {
       setErrors(local.errors);
       setFocusToken((n) => n + 1);
+      return;
+    }
+
+    /* The static preview has no server to receive the booking. Say so, rather
+       than showing a generic failure the visitor might blame themselves for. */
+    if (IS_STATIC_DEMO) {
+      setFormError(resolveErrorMessage("demo", dict));
+      setFocusToken((n) => n + 1);
+      scrollToTop();
       return;
     }
 
