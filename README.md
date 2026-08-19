@@ -282,7 +282,8 @@ and by unplugging your mouse.
 ## Handing this over
 
 If you are a student who built this and are passing it to someone else — or to
-the museum — read [`docs/HANDOFF.md`](docs/HANDOFF.md) first.
+the museum — read [`docs/HANDOFF.md`](docs/HANDOFF.md) first, and keep
+[`docs/ACCOUNTS.md`](docs/ACCOUNTS.md) up to date as you set services up.
 
 The short version: **the finished site never runs on anyone's personal
 computer.** `npm run dev` is for development only; production runs on Vercel,

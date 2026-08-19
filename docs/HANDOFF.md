@@ -106,6 +106,13 @@ Three rules make it work:
 - **Write the credentials down where the department can reach them** — the
   supervisor, a shared password manager, whatever they use. An account nobody
   else can open is not a handover, however project-branded the address looks.
+- **Turn 2FA on, and store the backup codes with the credentials.** If one
+  account holds the whole project, losing it loses the project — including the
+  bookings database. But 2FA tied to a student's phone re-personalises the
+  account, so the backup codes are what keep it recoverable after they leave.
+
+Record which service ended up registered where in
+[`ACCOUNTS.md`](ACCOUNTS.md) — passwords excluded.
 
 ### What "fake" must not mean
 
