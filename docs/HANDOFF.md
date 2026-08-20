@@ -87,7 +87,7 @@ without creating a mess.
 ### Make it a real mailbox, owned by the project
 
 Create one new free mailbox that exists only for this project — something like
-`syumuseum.project@gmail.com`. Then use that single address to sign up for
+`syuhm.project@gmail.com`. Then use that single address to sign up for
 Vercel, Supabase and Resend.
 
 This is better than using your own email, because the account belongs to the
@@ -137,12 +137,13 @@ signups across personal addresses is not.
 
 Separately from the accounts: `contactEmail` in `src/config/site.ts` is printed
 in the confirmation email every visitor receives, and on the screen shown if
-that email fails to send. It currently holds a **guess** (`museum@hksyu.edu`),
-flagged with a comment in the file.
+that email fails to send. It now holds `syuhm.project@gmail.com` — a real,
+monitored inbox, which is what matters.
 
-A placeholder there is fine while nobody is really booking. Before the site
-takes real bookings it must be a mailbox someone reads — otherwise a visitor
-trying to cancel writes into the void. This is a one-line change.
+It is still interim rather than official. Swap it for the museum's own address
+when the University provides one; it is a one-line change. What must never
+happen is it pointing at a mailbox nobody reads, because a visitor who cannot
+cancel still holds a place that stays blocked.
 
 ---
 

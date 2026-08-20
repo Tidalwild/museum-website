@@ -13,7 +13,7 @@ copied to every laptop that ever clones it.
 
 Everything for this project is registered to a single working address:
 
-> **`syumuseum.project@gmail.com`**
+> **`syuhm.project@gmail.com`**
 
 This is a placeholder, deliberately. It is not an official University mailbox
 and does not pretend to be one — the `.project` in the name says so. It exists
@@ -36,9 +36,9 @@ Fill in the right-hand columns as each service is set up.
 | Service | What it holds | Registered to | Set up on | Notes |
 | --- | --- | --- | --- | --- |
 | GitHub | the source code | *(personal account — needs transferring)* | — | See HANDOFF.md step 1 |
-| Vercel | the running website | `syumuseum.project@gmail.com` | *(not yet)* | Root Directory must be `syu-museum` |
-| Supabase | **bookings: names, phones, emails** | `syumuseum.project@gmail.com` | *(not yet)* | The one that must end up museum-owned |
-| Resend | confirmation emails | `syumuseum.project@gmail.com` | *(not yet)* | Sandbox sender only delivers to the account's own address |
+| Vercel | the running website | `syuhm.project@gmail.com` | *(not yet)* | Project is at the repo root — no Root Directory to set |
+| Supabase | **bookings: names, phones, emails** | `syuhm.project@gmail.com` | *(not yet)* | The one that must end up museum-owned |
+| Resend | confirmation emails | `syuhm.project@gmail.com` | *(not yet)* | Sandbox sender only delivers to the account's own address |
 | Domain name | the public web address | *(University IT)* | *(not yet)* | Needed before Resend can send to real visitors |
 
 ---
@@ -50,7 +50,7 @@ need a human reading them — not just a working inbox.
 
 | Where | Set in | Currently | Status |
 | --- | --- | --- | --- |
-| "contact us at …" in the confirmation email | `src/config/site.ts` → `SITE.contactEmail` | `museum@hksyu.edu` | ⚠️ **Unverified guess.** Confirm or replace before launch. |
+| "contact us at …" in the confirmation email | `src/config/site.ts` → `SITE.contactEmail` | `syuhm.project@gmail.com` | ✅ Real, monitored inbox. Interim — swap for the official address at launch. |
 | The "From" address on confirmation emails | `.env.local` → `EMAIL_FROM` | Resend sandbox sender | Needs a verified domain before real visitors receive email |
 
 A visitor trying to cancel a booking writes to `SITE.contactEmail`. If nobody
