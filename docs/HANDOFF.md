@@ -1,5 +1,9 @@
 # Handing this project over
 
+> **Live site is PHP, not this Next.js prototype.**  
+> Read [`CONTINUE.md`](CONTINUE.md) first. Code: [`php-site/`](../php-site/).  
+> URL: https://museum.hksyu.edu/
+
 Written for the student who built this, and for whoever takes it on next.
 
 The short version: **no part of the finished website runs on anyone's personal

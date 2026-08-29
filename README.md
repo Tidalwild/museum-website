@@ -1,5 +1,13 @@
 # Shue Yan University History Museum — website
 
+**Live (2026-08):** PHP on https://museum.hksyu.edu/ — see
+[`php-site/`](php-site/) and [`docs/CONTINUE.md`](docs/CONTINUE.md).
+
+The Next.js app below is the original prototype (Vercel / Supabase). Do not
+treat it as what is running on the University server.
+
+---
+
 A bilingual (English / Traditional Chinese), WCAG 2.2 Level AA website for the
 SYU History Museum, with an on-site visit booking system.
 

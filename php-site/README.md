@@ -1,17 +1,6 @@
 # PHP site for museum.hksyu.edu
 
-This is the live Apache/PHP/MySQL port of the museum site.
-The Next.js app in the repo root is the original prototype.
+Live Apache/PHP/MySQL port. **Handoff for the next session: [`docs/CONTINUE.md`](../docs/CONTINUE.md).**
 
-## Deploy
-
-Upload the contents of this folder to the web root (`/var/www/html2/museum`).
-Copy `inc/config.sample.php` to `inc/config.php` on the server and fill in
-MySQL + staff password there. Do not commit `inc/config.php`.
-
-## Recent work
-
-- 1.5-hour sessions, 30 visitors, same-day booking
-- Extra guest names, staff calendar + cancel
-- Mobile layout (iOS Safari / Android Chrome)
-- Confirmation email ticket: stacked rows, Chinese 參觀人數 (no `!`)
+Upload this folder’s contents to the web root. Copy `inc/config.sample.php` →
+`inc/config.php` on the server only. Never commit `inc/config.php`.
