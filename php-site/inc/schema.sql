@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS museum_bookings (
+  id CHAR(36) NOT NULL,
+  reference VARCHAR(16) NOT NULL,
+  first_name VARCHAR(60) NOT NULL,
+  last_name VARCHAR(60) NOT NULL,
+  phone_country_code VARCHAR(8) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  visit_date DATE NOT NULL,
+  visit_slot CHAR(5) NOT NULL,
+  guests TINYINT UNSIGNED NOT NULL,
+  extra_guests TEXT NULL,
+  referral_source VARCHAR(40) NOT NULL,
+  accepted_terms_at DATETIME NOT NULL,
+  locale VARCHAR(16) NOT NULL DEFAULT 'en',
+  status VARCHAR(16) NOT NULL DEFAULT 'confirmed',
+  confirmation_email_sent_at DATETIME NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY reference (reference),
+  KEY slot_idx (visit_date, visit_slot, status),
+  KEY email_idx (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
